@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*quadro do jogo*/
+.game-board{
+    width: 100%;
+    height: 400px;
+    border: 1px solid black; /*RETIRAR*/
+    border-bottom: 7px solid rgb(35, 160, 40);
+    position: relative; /*para que os objetos  não saiam dentro do jogo*/
+    overflow: hidden; /*para que os objetos não apareçam ca o não estejam no game-board */
+}
+
+/*grama do jogo (INCOMPLETA)*/
+/*
+.grass{
+    width: 100%;
+    bottom: 0;
+    height: 30%;
+    color: rgb(71, 218, 30);
+}*/
+
+/*Tubo verde em que o Mario pula*/
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+/*Mario saltitante*/
+.mario{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+/*classe de pulo que é adicionada e retirada da img Mario para que ele pule e possa pular novamente*/
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+/*animação do tubo verde*/
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+/*animação de pulo do Mario*/
+@keyframes jump {
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 160px
+    }
+    50%{
+        bottom: 160px;
+    }
+    65%{
+        bottom: 160px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
