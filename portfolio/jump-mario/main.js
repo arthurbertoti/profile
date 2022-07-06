@@ -15,7 +15,7 @@ const jump = () => {
 }
 
 
-//loop que verifica se o Mario bateu na pipe
+//Intervalo que verifica constantemente se o Mario bateu na pipe até ele bater
 const loop = setInterval(() => {
     
     //acessa o deslocamento esquerdo da img pipe
@@ -24,7 +24,7 @@ const loop = setInterval(() => {
     //acessa a posição vertical do Mario (que é dada em String), retira o px do nome e transforma a String em Number (com o + na frente)
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
-
+    //loop que verifica se o Mario bateu na pipe
     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80){
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
@@ -40,3 +40,4 @@ const loop = setInterval(() => {
 
 //Evento do pulo
 document.addEventListener('keydown', jump);
+document.addEventListener('touchstart', jump);
