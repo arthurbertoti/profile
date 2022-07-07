@@ -6,21 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--Link de arquivos-->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" defer>
     <script src="main.js" defer></script>
     <!--defer serve para que o arquivo seja executado apenas após o carregamento do html-->
 
     <title>Jump Mario</title>
 </head>
 <body>
-    <div></div>
+    <div class="start-menu">
+        <h1>Welcome!!!</h1>
+        <p>User Name:</p>
+        <input type="text" class="type-input">
+        <input type="button" value="Enter" class="enter-input">
+    </div>
+
     <div class="game-board">
-        <div class="grass"></div>
+        <img src="images/reset.png" class="reset-input" onclick="reset()">
+
+        <div class="score-board">
+            <p class="score">Pontos: x</p>
+            <div class="name-board">
+                <img src="images/super-mario-png4.webp" class="static-mario">
+                <p class="name">Nome</p>
+            </div>
+            <p class="lives">vidas ***</p>
+        </div>
+
+        
         <img src="images/clouds.png" class="clouds">
-        <img src="images/Mario.gif" class="mario">
+        <img src="images/Mario.gif" rel=preload class="mario">
         <img src="images/pipe.png" class="pipe">
         
+        
+        <div class="grass"></div>
     </div>
+    
     
 </body>
 </html>

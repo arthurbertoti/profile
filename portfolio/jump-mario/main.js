@@ -25,7 +25,7 @@ const loop = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
     //loop que verifica se o Mario bateu na pipe
-    if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80){
+    if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 180){
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
         mario.style.animation = 'none'
@@ -33,7 +33,7 @@ const loop = setInterval(() => {
         mario.src = 'images/game-over.png';
         mario.style.width = '90px';
         mario.style.height = '120px';
-        mario.style.marginLeft ='45px';
+        mario.style.marginLeft ='30px';
         clearInterval(loop)
     }
 }, 10)

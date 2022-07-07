@@ -4,13 +4,35 @@
     box-sizing: border-box;
 }
 
+/*PRE-GAME*/
+
+/*menu inicial do jogo*/
+.start-menu{
+    background-color: #ff0000;
+    border: 1px solid black;
+    text-align: center;
+    display: none; /* Colcocar e retirar esta função no início do jogo para que o user coloque as informações dele*/ 
+}
+
+/*local para por o nome*/
+.type-input{
+    border-radius: 10px;
+}
+
+/*Botão de iniciar o jogo*/
+.enter-input{
+    border-radius: 10px;
+}
+
+
+/*ON GAME*/
+
 /*quadro do jogo*/
 .game-board{
     width: 100vw; 
-    height: 70vh; 
-    border-bottom: 7px solid rgb(35, 160, 40);
+    height: 100vh; 
     position: relative; /*para que os objetos  não saiam dentro do jogo*/
-    overflow: visible; /*para que os objetos não apareçam ca o não estejam no game-board */
+    overflow: hidden; /*para que os objetos não apareçam ca o não estejam no game-board */
     background: linear-gradient(#87CEEB, #E0f6FF);
 }
 
@@ -18,17 +40,67 @@
 
 .grass{
     position: absolute;
+    background-color: rgb(0, 211, 0);
     width: 100%;
+    height: 100px;
+    border-top: 7px solid rgb(35, 160, 40);
     bottom: 0;
-    height: 30vh;
     color: rgb(71, 218, 30);
     
 }
 
-/*Tubo verde em que o Mario pula*/
+
+/*botão de reset do jogo*/
+.reset-input{
+}
+
+/*quadro que contém pontuação, informações do jogador, foto do Mario, e VIDAS??*/
+.score-board{
+    background-color: rgba(0, 0, 0, 0.70);
+    height: 130px;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.score{
+    display: inline-block;
+    vertical-align: top;
+}
+/*Quadro que contém o nome do jogador e a foto do Mario (está dentro do score-board)*/
+.name-board{
+    background-color: rgb(78, 78, 78);
+    border-radius: 15px;
+    height: 90px;
+    width: 250px;
+    margin: auto;
+    text-align: center;
+    display: inline-block;  
+}
+
+/*imagem do Mario que fica em cima do nome*/
+.static-mario{
+    width: 50px;
+    height: auto;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* vidas do Mario USAREI??*/
+ .lives{
+    display: inline-block;
+    vertical-align: top;
+    right: 20px;
+}
+
+/*tubo verde em que o Mario pula*/
 .pipe{
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
     width: 80px;
     height: 80px;
     animation: pipe-animation 1.5s infinite linear;
@@ -39,19 +111,28 @@
     width: 150px;
     height: 150px;
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
 }
 
+
+/*nuvens*/
 .clouds{
     position: absolute;
+    top: 175px;
     width: 500px;
     height: 250px;
     animation: clouds-animation 8s infinite linear;
 }
+
 /*classe de pulo que é adicionada e retirada da img Mario para que ele pule e possa pular novamente*/
 .jump{
     animation: jump 500ms ease-out;
 }
+
+
+
+/*----ANIMAÇÕES----*/
+
 
 /*animação do tubo verde*/
 @keyframes pipe-animation{
@@ -66,19 +147,19 @@
 /*animação de pulo do Mario*/
 @keyframes jump {
     0%{
-        bottom: 0;
+        bottom: 100;
     }
     40%{
-        bottom: 160px
+        bottom: 260px
     }
     50%{
-        bottom: 160px;
+        bottom: 260px;
     }
     65%{
-        bottom: 160px;
+        bottom: 260px;
     }
     100%{
-        bottom: 0;
+        bottom: 100;
     }
 }
 
@@ -90,3 +171,4 @@
         right: 100%;
     }
 }
+
