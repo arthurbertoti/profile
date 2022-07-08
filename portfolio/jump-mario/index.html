@@ -13,31 +13,34 @@
     <title>Jump Mario</title>
 </head>
 <body>
-    <div class="start-menu">
-        <h1>Welcome!!!</h1>
-        <p>User Name:</p>
-        <input type="text" class="type-input">
-        <input type="button" value="Enter" class="enter-input">
-    </div>
-
     <div class="game-board">
-        <img src="images/reset.png" class="reset-input" onclick="reset()">
 
-        <div class="score-board">
-            <p class="score">Pontos: x</p>
-            <div class="name-board">
-                <img src="images/super-mario-png4.webp" class="static-mario">
-                <p class="name">Nome</p>
+        <div class="pre-game">
+            <img src="images/Mario-gif.gif" class="start-mario">
+            <div class="start-menu">
+                <h1>Welcome!!!</h1>
+                <p>User Name:</p>
+                <input type="text" class="type-input" maxlength="25">
+                <input type="button" value="Enter" class="enter-input" onclick="startGame()">
             </div>
-            <p class="lives">vidas ***</p>
         </div>
 
-        
-        <img src="images/clouds.png" class="clouds">
-        <img src="images/mario.gif" rel=preload class="mario">
-        <img src="images/pipe.png" class="pipe">
-        
-        
+        <div class="on-game">
+            <input type="button" value="Reset" class="reset-input" onclick="reset()">
+            <div class="score-board">
+                <p class="score">Pontos: 0</p>
+                <div class="name-board">
+                    <img src="images/super-mario-png4.webp" class="static-mario">
+                    <p class="name">Nome</p>
+                </div>
+                <p class="lives">Vidas: &#10084;&#65039;&#10084;&#65039;&#10084;&#65039;</p>
+            </div>
+            <img src="images/clouds.png" class="clouds">
+            <img src="images/mario.gif" rel=preload class="mario">
+            <img src="images/pipe.png" class="pipe">
+            <div class="win-lose"></div>
+        </div>
+
         <div class="grass"></div>
     </div>
     
